@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteemitApp", "SteemitApp\SteemitApp.csproj", "{230A3C21-510C-4F10-A802-EB90A03B15D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteemitApp.Core", "SteemitApp\SteemitApp.Core.csproj", "{230A3C21-510C-4F10-A802-EB90A03B15D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteemitApp.Droid", "Droid\SteemitApp.Droid.csproj", "{F46BF191-7AEF-4361-9D8E-DB6D6286308C}"
 EndProject
