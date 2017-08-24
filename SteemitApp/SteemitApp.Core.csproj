@@ -32,6 +32,16 @@
     <Compile Include="App.cs" />
     <Compile Include="Providers\IProvider.cs" />
     <Compile Include="Models\Discussion.cs" />
+    <Compile Include="Providers\RestProvider.cs" />
+    <Compile Include="Repositories\DataRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Presentations\DiscussionPresentation.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Providers\RestResult.cs" />
+    <Compile Include="Payloads\DiscussionPayload.cs" />
+    <Compile Include="Models\Vote.cs" />
+    <Compile Include="Models\Benefit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -65,6 +75,9 @@
   <ItemGroup>
     <Folder Include="Providers\" />
     <Folder Include="Models\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Presentations\" />
+    <Folder Include="Payloads\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

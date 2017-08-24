@@ -47,6 +47,7 @@ namespace SteemitApp.Droid
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::SteemitApp.Droid.Resource.Styleable.MvxListView;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::SteemitApp.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::SteemitApp.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::ModernHttpClient.Resource.String.library_name = global::SteemitApp.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Attribute
@@ -102,14 +103,14 @@ namespace SteemitApp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int MvvmCrossTagId = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int MvvmCrossTagId = 2131099648;
 			
-			// aapt resource value: 0x7f050001
-			public const int MvxBindingTagUnique = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int MvxBindingTagUnique = 2131099649;
 			
-			// aapt resource value: 0x7f050002
-			public const int myButton = 2131034114;
+			// aapt resource value: 0x7f060002
+			public const int myButton = 2131099650;
 			
 			static Id()
 			{
@@ -162,11 +163,14 @@ namespace SteemitApp.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f070001
-			public const int app_name = 2131165185;
+			// aapt resource value: 0x7f050002
+			public const int app_name = 2131034114;
 			
-			// aapt resource value: 0x7f070000
-			public const int hello = 2131165184;
+			// aapt resource value: 0x7f050001
+			public const int hello = 2131034113;
+			
+			// aapt resource value: 0x7f050000
+			public const int library_name = 2131034112;
 			
 			static String()
 			{
@@ -181,8 +185,8 @@ namespace SteemitApp.Droid
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int Theme_Splash = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int Theme_Splash = 2131165184;
 			
 			static Style()
 			{

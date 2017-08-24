@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace SteemitApp.Core
+namespace SteemitApp.Core.Models
 {
-    public class Discussion
+    public class Discussion : BaseModel
     {
         [JsonProperty("id")]
-        public long Id { get; set; } = 205679612144069;
+        public long Id { get; set; }
 
         [JsonProperty("author")]
         public string Author { get; set; }
@@ -106,7 +106,6 @@ namespace SteemitApp.Core
         // "root_comment": 10887082,
         public long RootComment { get; set; }
 
-
         [JsonProperty("max_accepted_payout")]
         // "max_accepted_payout": "0.000 SBD",
         public string MaxAcceptedPayout { get; set; }
@@ -116,11 +115,9 @@ namespace SteemitApp.Core
         public long PercentSteemDollars { get; set; }
 
         [JsonProperty("allow_replies")]
-        // "allow_replies": true,
         public bool AllowReplies { get; set; }
 
         [JsonProperty("allow_votes")]
-        // "allow_votes": true,
         public bool AllowVotes { get; set; }
 
         [JsonProperty("allow_curation_rewards")]
@@ -129,7 +126,7 @@ namespace SteemitApp.Core
 
         [JsonProperty("beneficiaries")]
         // "beneficiaries": [],
-        public List<string> Beneficiaries { get; set; }
+        public List<Benefit> Beneficiaries { get; set; }
 
         [JsonProperty("url")]
         // "url": "/steemit/@steemitblog/the-state-of-steem-august-expansion",
@@ -149,7 +146,7 @@ namespace SteemitApp.Core
 
         [JsonProperty("active_votes")]
         // "active_votes": [],
-        public List<string> ActivesVotes { get; set; }
+        public List<Vote> ActivesVotes { get; set; }
 
         [JsonProperty("replies")]
         // "replies": [],

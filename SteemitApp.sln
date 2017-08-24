@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteemitApp.iOS", "iOS\Steem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteemitApp.UITests", "UITests\SteemitApp.UITests.csproj", "{F9C3BC28-F51E-41D0-9BCF-2B8F5924B49B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteemitApp.UnitTests", "UnitTests\SteemitApp.UnitTests.csproj", "{CE72813D-F79C-4823-BED3-ED849904E8C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,5 +69,17 @@ Global
 		{F9C3BC28-F51E-41D0-9BCF-2B8F5924B49B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{F9C3BC28-F51E-41D0-9BCF-2B8F5924B49B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{F9C3BC28-F51E-41D0-9BCF-2B8F5924B49B}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{CE72813D-F79C-4823-BED3-ED849904E8C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE72813D-F79C-4823-BED3-ED849904E8C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE72813D-F79C-4823-BED3-ED849904E8C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE72813D-F79C-4823-BED3-ED849904E8C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE72813D-F79C-4823-BED3-ED849904E8C3}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{CE72813D-F79C-4823-BED3-ED849904E8C3}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{CE72813D-F79C-4823-BED3-ED849904E8C3}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{CE72813D-F79C-4823-BED3-ED849904E8C3}.Release|iPhone.Build.0 = Release|Any CPU
+		{CE72813D-F79C-4823-BED3-ED849904E8C3}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{CE72813D-F79C-4823-BED3-ED849904E8C3}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{CE72813D-F79C-4823-BED3-ED849904E8C3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{CE72813D-F79C-4823-BED3-ED849904E8C3}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
