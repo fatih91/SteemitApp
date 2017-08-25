@@ -20,6 +20,10 @@ namespace SteemitApp.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView TableDiscussions { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField TextField { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -27,6 +31,11 @@ namespace SteemitApp.iOS.Views
             if (Button != null) {
                 Button.Dispose ();
                 Button = null;
+            }
+
+            if (TableDiscussions != null) {
+                TableDiscussions.Dispose ();
+                TableDiscussions = null;
             }
 
             if (TextField != null) {

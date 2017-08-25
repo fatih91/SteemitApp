@@ -1,3 +1,4 @@
+using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
 
 namespace SteemitApp.Core
@@ -11,7 +12,9 @@ namespace SteemitApp.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
+            Mvx.RegisterSingleton<IProvider>(() => new RestProvider());
             RegisterAppStart<ViewModels.MainViewModel>();
+
         }
     }
 }

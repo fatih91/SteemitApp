@@ -5,6 +5,25 @@ namespace SteemitApp.Core
 {
     public class DiscussionPayload
     {
+        public DiscussionPayload()
+        {
+
+        }
+
+        public DiscussionPayload(string Tag, string Limit)
+        {
+            this.Tag = Tag;
+            this.Limit = Limit;
+        }
+
+        public DiscussionPayload(string Tag, string Limit, string StartAuthor, string StartPermlink)
+        {
+            this.Tag = Tag;
+            this.Limit = Limit;
+            this.StartAuthor = StartAuthor;
+            this.StartPermlink = StartPermlink;
+        }
+
         [JsonProperty("tag")]
         public string Tag { get; set; }
 

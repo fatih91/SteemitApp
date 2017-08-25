@@ -5,17 +5,28 @@ namespace SteemitApp.Core.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
-        public MainViewModel()
+        private readonly IRepository repository;
+
+        public MainViewModel(IRepository Repository)
         {
+            repository = Repository;
         }
         
-        public override Task Initialize()
+        public override async Task Initialize()
         {
             //TODO: Add starting logic here
-		    
-            return base.Initialize();
+            var result = await repository.LoadDiscussions(new DiscussionPayload("steem", "10"));
+            if (result.StatusCode == System.Net.HttpStatusCode.OK) 
+            {
+                foreach (var discussion in result.Data)
+                {
+                    Discussions.Add(discussion);
+                }
+            }
         }
-        
+
+        MvxObservableCollection<DiscussionPresentation> Discussions { get; set; } = new MvxObservableCollection<DiscussionPresentation>();
+
         public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
         private void ResetText()
         {
