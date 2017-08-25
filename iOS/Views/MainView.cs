@@ -9,6 +9,7 @@ namespace SteemitApp.iOS.Views
     {
         public MainView() : base("MainView", null)
         {
+            //Hallo 
         }
 
         public override void ViewDidLoad()
