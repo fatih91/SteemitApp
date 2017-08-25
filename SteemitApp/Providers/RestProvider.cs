@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -18,15 +18,15 @@ namespace SteemitApp.Core
             client.BaseAddress = new Uri("https://api.steemjs.com");
         }
 
-        public async Task<RestResult<List<Discussion>>> LoadDiscussions(DiscussionPayload Payload)
+        public async Task<RestResult<List<Post>>> LoadDiscussions(DiscussionPayload Payload)
         {
             var jsonPayload = JsonConvert.SerializeObject(Payload);
 
             var response = await client.GetAsync($"get_discussions_by_trending?query={jsonPayload}");
             var rawJson = await response.Content.ReadAsStringAsync();
-            var list = JsonConvert.DeserializeObject<List<Discussion>>(rawJson);
+            var list = JsonConvert.DeserializeObject<List<Post>>(rawJson);
 
-            return new RestResult<List<Discussion>> 
+            return new RestResult<List<Post>> 
             { 
                 Data = list, 
                 StatusCode = response.StatusCode 

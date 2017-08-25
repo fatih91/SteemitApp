@@ -1,3 +1,5 @@
+using MvvmCross.Binding.Bindings.Target.Construction;
+using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
@@ -26,6 +28,13 @@ namespace SteemitApp.iOS
         protected override IMvxTrace CreateDebugTrace()
         {
             return new DebugTrace();
+        }
+
+        protected override void FillTargetFactories(MvvmCross.Binding.Bindings.Target.Construction.IMvxTargetBindingFactoryRegistry registry)
+        {
+            registry.RegisterCustomBindingFactory<PagingTableSource>("Paging", (arg) => new TableSourcePagingBinding(arg));
+
+            base.FillTargetFactories(registry);
         }
     }
 }

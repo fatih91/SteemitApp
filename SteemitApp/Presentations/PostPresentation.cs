@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using SteemitApp.Core.Models;
 
 namespace SteemitApp.Core
 {
-    public class DiscussionPresentation
+    public class PostPresentation
     {
         public long Id { get; set; }
 
@@ -67,7 +68,7 @@ namespace SteemitApp.Core
 
         public bool AllowCurationRewards { get; set; }
 
-        public List<string> Beneficiaries { get; set; }
+        public List<Benefit> Beneficiaries { get; set; }
 
         public string Url { get; set; }
 
@@ -77,7 +78,7 @@ namespace SteemitApp.Core
 
         public string TotalPendingPayoutValue { get; set; }
 
-        public List<string> ActivesVotes { get; set; }
+        public List<Vote> ActivesVotes { get; set; }
 
         public List<string> Replies { get; set; }
 

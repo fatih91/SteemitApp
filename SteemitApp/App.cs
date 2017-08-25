@@ -11,10 +11,11 @@ namespace SteemitApp.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
-
+            
             Mvx.RegisterSingleton<IProvider>(() => new RestProvider());
-            RegisterAppStart<ViewModels.MainViewModel>();
+            Mvx.ConstructAndRegisterSingleton<IRepository, DataRepository>();
 
+            RegisterAppStart<ViewModels.MainViewModel>();
         }
     }
 }

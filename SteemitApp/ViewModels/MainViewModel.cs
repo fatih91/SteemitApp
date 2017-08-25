@@ -25,7 +25,7 @@ namespace SteemitApp.Core.ViewModels
             }
         }
 
-        MvxObservableCollection<DiscussionPresentation> Discussions { get; set; } = new MvxObservableCollection<DiscussionPresentation>();
+        public MvxObservableCollection<PostPresentation> Discussions { get; set; } = new MvxObservableCollection<PostPresentation>();
 
         public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
         private void ResetText()

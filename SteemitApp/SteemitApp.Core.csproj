@@ -31,11 +31,11 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Providers\IProvider.cs" />
-    <Compile Include="Models\Discussion.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Providers\RestProvider.cs" />
     <Compile Include="Repositories\DataRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Presentations\DiscussionPresentation.cs" />
+    <Compile Include="Presentations\PostPresentation.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Providers\RestResult.cs" />
