@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,19 +15,33 @@ namespace SteemitApp.Core
         {
             provider = Provider;
 
-            Mapper.CreateMap<Discussion, DiscussionPresentation>();
+            Mapper.CreateMap<Post, PostPresentation>();
 
                   // .ForMember(dest => dest.CreationDate, obj => obj.MapFrom(source => source.AufnahmeDatum));
         }
 
-        public async Task<RestResult<List<DiscussionPresentation>>> LoadDiscussions(DiscussionPayload Payload)
+        public async Task<RestResult<List<PostPresentation>>> LoadDiscussions(DiscussionPayload Payload)
         {
             var response = await provider.LoadDiscussions(Payload);
 
-            RestResult<List<DiscussionPresentation>> result = new RestResult<List<DiscussionPresentation>>();
+            RestResult<List<PostPresentation>> result = new RestResult<List<PostPresentation>>();
 
             result.StatusCode = response.StatusCode;
-            result.Data = response.Data.Select(Mapper.Map<Discussion, DiscussionPresentation>).ToList();
+
+            foreach (var discussion in response.Data)
+            {
+                try
+                {
+                    var data = Mapper.Map<PostPresentation>(discussion);
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+            }
+
+            result.Data = response.Data.Select(Mapper.Map<Post, PostPresentation>).ToList();
                 
             return result;
         }

@@ -1,4 +1,5 @@
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Binding.iOS.Views;
 using MvvmCross.iOS.Views;
 using MvvmCross.iOS.Views.Presenters.Attributes;
 
@@ -18,7 +19,19 @@ namespace SteemitApp.iOS.Views
             var set = this.CreateBindingSet<MainView, Core.ViewModels.MainViewModel>();
             set.Bind(TextField).To(vm => vm.Text);
             set.Bind(Button).To(vm => vm.ResetTextCommand);
+
+            var source = new PagingTableSource(TableDiscussions);
+
+            set.Bind(source).To(vm => vm.Discussions);
+            set.Bind(source).For("Paging").To(vm => vm.ResetTextCommand);
+
+            TableDiscussions.Source = source;
+
             set.Apply();
+
+            TableDiscussions.ReloadData();
+
+            this.ViewModel.Initialize();
         }
     }
 }

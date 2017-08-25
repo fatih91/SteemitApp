@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using SteemitApp.Core;
@@ -8,6 +8,6 @@ namespace SteemitApp.Core
 {
     public interface IRepository
     {
-        Task<RestResult<List<DiscussionPresentation>>> LoadDiscussions(DiscussionPayload Payload);
+        Task<RestResult<List<PostPresentation>>> LoadDiscussions(DiscussionPayload Payload);
     }
 }

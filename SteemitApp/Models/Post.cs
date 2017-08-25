@@ -4,7 +4,10 @@ using Newtonsoft.Json;
 
 namespace SteemitApp.Core.Models
 {
-    public class Discussion : BaseModel
+    /// <summary>
+    /// Representing one post on base steemit base.
+    /// </summary>
+    public class Post : BaseModel
     {
         [JsonProperty("id")]
         public long Id { get; set; }
