@@ -113,6 +113,15 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\steemitlogo%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\steemitlogo%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\steemitlogo1x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\steemitlogo1%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\steemitlogo2%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\steemitlogo31x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\steemitlogo4%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\steemitlogo51x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\steemitlogo6%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
