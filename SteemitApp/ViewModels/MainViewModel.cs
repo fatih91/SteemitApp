@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using MvvmCross.Core.ViewModels;
+using System.Linq;
 
 namespace SteemitApp.Core.ViewModels
 {
@@ -31,6 +32,24 @@ namespace SteemitApp.Core.ViewModels
         private void ResetText()
         {
             Text = "Hello MvvmCross";
+        }
+
+        public IMvxCommand LoadMoreCommand => new MvxCommand(LoadMore);
+        private async void LoadMore() 
+        {
+            var lastEntry = Discussions.LastOrDefault();
+            if (lastEntry != null) 
+            {
+                var payload = new DiscussionPayload("steem", "10", lastEntry.Author, lastEntry.Permlink);
+                var result = await repository.LoadDiscussions(payload);
+                if (result.StatusCode == System.Net.HttpStatusCode.OK) 
+                {
+                    foreach (var discussion in result.Data)
+                    {
+                        Discussions.Add(discussion);
+                    }
+                }
+            }
         }
 
         private string _text = "Hello MvvmCross";
