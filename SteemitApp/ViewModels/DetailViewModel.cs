@@ -25,7 +25,7 @@ namespace SteemitApp.Core
                 try
                 {
                     string img = match.ToString();
-                    post.Body = post.Body.Replace(img, $"<img src=\"{img}\" />");
+                    // post.Body = post.Body.Replace(img, $"<img src=\"{img}\" />");
                 }
                 catch (Exception ex)
                 {

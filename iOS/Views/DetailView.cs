@@ -23,8 +23,16 @@ namespace SteemitApp.iOS
 
             set.Apply();
 
+            // this.webViewHeightConstraint.Constant = 1000f;
+            this.WebView.ScrollView.ScrollEnabled = false;
+            this.WebView.Frame = new CoreGraphics.CGRect(0f, 
+                                                         0f, 
+                                                         this.WebView.Frame.Width, 
+                                                         2000f);
+
             this.ViewModel.Initialize();
         }
+
 
         public override void DidReceiveMemoryWarning()
         {

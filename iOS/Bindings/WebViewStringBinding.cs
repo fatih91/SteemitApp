@@ -35,6 +35,8 @@ namespace SteemitApp.iOS
             if (value != null) 
             {
                 string html = (string)value;
+                var MarkDownEngine = new MarkdownDeep.Markdown();
+                html = MarkDownEngine.Transform(html);
                 webView.LoadHtmlString(html, new Foundation.NSUrl(""));
             }
         }
