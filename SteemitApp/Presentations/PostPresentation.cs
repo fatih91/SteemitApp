@@ -20,6 +20,8 @@ namespace SteemitApp.Core
 
         public string Title { get; set; }
 
+        public string Body { get; set; }
+
         public DateTime LastUpdate { get; set; }
 
         public DateTime Created { get; set; }

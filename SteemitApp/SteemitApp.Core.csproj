@@ -42,6 +42,7 @@
     <Compile Include="Payloads\DiscussionPayload.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Models\Benefit.cs" />
+    <Compile Include="ViewModels\DetailViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

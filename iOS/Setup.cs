@@ -33,6 +33,7 @@ namespace SteemitApp.iOS
         protected override void FillTargetFactories(MvvmCross.Binding.Bindings.Target.Construction.IMvxTargetBindingFactoryRegistry registry)
         {
             registry.RegisterCustomBindingFactory<PagingTableSource>("Paging", (arg) => new TableSourcePagingBinding(arg));
+            registry.RegisterCustomBindingFactory<UIWebView>("Html", (arg) => new WebViewStringBinding(arg));
 
             base.FillTargetFactories(registry);
         }

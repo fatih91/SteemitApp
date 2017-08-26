@@ -1,16 +1,20 @@
 using System.Threading.Tasks;
 using MvvmCross.Core.ViewModels;
 using System.Linq;
+using MvvmCross.Core.Navigation;
+using MvvmCross.Platform;
 
 namespace SteemitApp.Core.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
         private readonly IRepository repository;
+        private readonly IMvxNavigationService navigation;
 
-        public MainViewModel(IRepository Repository)
+        public MainViewModel(IRepository Repository, IMvxNavigationService Navigation)
         {
             repository = Repository;
+            navigation = Navigation;
         }
         
         public override async Task Initialize()
@@ -32,6 +36,7 @@ namespace SteemitApp.Core.ViewModels
         private void ResetText()
         {
             Text = "Hello MvvmCross";
+
         }
 
         public IMvxCommand LoadMoreCommand => new MvxCommand(LoadMore);
@@ -44,12 +49,19 @@ namespace SteemitApp.Core.ViewModels
                 var result = await repository.LoadDiscussions(payload);
                 if (result.StatusCode == System.Net.HttpStatusCode.OK) 
                 {
-                    foreach (var discussion in result.Data)
+                    for (int i = 1; i < result.Data.Count; i++)
                     {
-                        Discussions.Add(discussion);
+                        Discussions.Add(result.Data[i]);
                     }
                 }
             }
+        }
+
+        public IMvxCommand SelectTableItemCommand => new MvxCommand<PostPresentation>(SelectTableItem);
+        private void SelectTableItem(PostPresentation Post) 
+        {
+            Mvx.RegisterSingleton<PostPresentation>(Post);
+            navigation.Navigate<DetailViewModel>();
         }
 
         private string _text = "Hello MvvmCross";

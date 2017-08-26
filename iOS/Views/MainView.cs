@@ -23,6 +23,7 @@ namespace SteemitApp.iOS.Views
             var source = new PagingTableSource(TableDiscussions);
 
             set.Bind(source).To(vm => vm.Discussions);
+            set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.SelectTableItemCommand);
             set.Bind(source).For("Paging").To(vm => vm.LoadMoreCommand);
 
             TableDiscussions.Source = source;
