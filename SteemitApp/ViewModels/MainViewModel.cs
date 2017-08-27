@@ -61,7 +61,8 @@ namespace SteemitApp.Core.ViewModels
         private void SelectTableItem(PostPresentation Post) 
         {
             Mvx.RegisterSingleton<PostPresentation>(Post);
-            navigation.Navigate<DetailViewModel>();
+            // navigation.Navigate<DetailViewModel>();
+            navigation.Navigate<TabViewModel>();
         }
 
         private string _text = "Hello MvvmCross";

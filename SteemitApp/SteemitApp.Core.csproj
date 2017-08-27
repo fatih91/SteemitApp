@@ -43,6 +43,8 @@
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Models\Benefit.cs" />
     <Compile Include="ViewModels\DetailViewModel.cs" />
+    <Compile Include="ViewModels\TabViewModel.cs" />
+    <Compile Include="Presentations\TabItemPresentation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

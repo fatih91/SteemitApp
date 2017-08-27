@@ -2,11 +2,14 @@
 using CoreGraphics;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
+using MvvmCross.iOS.Views.Presenters.Attributes;
 using SteemitApp.Core;
+using SteemitApp.Core.ViewModels;
 using UIKit;
 
 namespace SteemitApp.iOS
 {
+    [MvxTabPresentation]
     public partial class DetailView : MvxViewController
     {
         public DetailView() : base("DetailView", null)
@@ -34,6 +37,7 @@ namespace SteemitApp.iOS
             // this.ScrollView.AddSubview(this.WebView);
             this.ScrollView.ContentSize = new CGSize(100f, 2000f);
 
+            this.TabBarItem.Title = "Test";
             this.ViewModel.Initialize();
         }
 

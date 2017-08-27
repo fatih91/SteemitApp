@@ -138,6 +138,7 @@
     <InterfaceDefinition Include="Views\MainView.xib" />
     <InterfaceDefinition Include="TableCells\PostCell.xib" />
     <InterfaceDefinition Include="Views\DetailView.xib" />
+    <InterfaceDefinition Include="Views\TabView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -171,6 +172,11 @@
     <Compile Include="Bindings\WebViewStringBinding.cs" />
     <Compile Include="Bindings\WebViewLoadedBinding.cs" />
     <Compile Include="Bindings\ScrollViewSizeBinding.cs" />
+    <Compile Include="Views\TabView.cs" />
+    <Compile Include="Views\TabView.designer.cs">
+      <DependentUpon>TabView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bindings\TabViewTabsBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SteemitApp\SteemitApp.Core.csproj">

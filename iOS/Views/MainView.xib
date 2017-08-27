@@ -11,8 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainView">
             <connections>
-                <outlet property="Button" destination="17" id="name-outlet-17"/>
-                <outlet property="TextField" destination="10" id="name-outlet-10"/>
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
                 <outlet property="TableDiscussions" destination="20" id="name-outlet-20"/>
             </connections>
@@ -22,33 +20,32 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17" misplaced="YES">
-                    <rect key="frame" x="0.0" y="376" width="375" height="30"/>
-                    <state key="normal" title="Reset">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="10" misplaced="YES">
-                    <rect key="frame" x="0.0" y="319" width="375" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="20" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                    <rect key="frame" x="20" y="62" width="382" height="241"/>
+                    <rect key="frame" x="20" y="136" width="382" height="415"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="29" fixedFrame="YES">
+                    <rect key="frame" x="31" y="90" width="538" height="29"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <segments>
+                        <segment title="New"/>
+                        <segment title="Hot"/>
+                        <segment title="Trending"/>
+                        <segment title="Promoted"/>
+                    </segments>
+                </segmentedControl>
+                <tabBar contentMode="scaleToFill" id="42" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                    <rect key="frame" x="172" y="531" width="320" height="49"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <items>
+                        <tabBarItem systemItem="favorites" id="43"/>
+                        <tabBarItem systemItem="more" id="44"/>
+                    </items>
+                </tabBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="10" firstAttribute="width" secondItem="2" secondAttribute="width" id="0ng-P2-leZ"/>
-                <constraint firstItem="10" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="Dii-iO-6oi"/>
-                <constraint firstItem="17" firstAttribute="height" secondItem="10" secondAttribute="height" id="MC0-QQ-sBb"/>
-                <constraint firstItem="17" firstAttribute="centerX" secondItem="10" secondAttribute="centerX" id="ggV-Oc-D58"/>
-                <constraint firstItem="10" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" id="ocq-8T-Rlm"/>
-                <constraint firstItem="17" firstAttribute="width" secondItem="10" secondAttribute="width" id="tgk-ns-1tm"/>
-                <constraint firstItem="17" firstAttribute="top" secondItem="10" secondAttribute="bottom" constant="27" id="tzv-8v-wAf"/>
-            </constraints>
             <point key="canvasLocation" x="25.5" y="52.5"/>
         </view>
     </objects>

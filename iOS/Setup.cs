@@ -2,6 +2,7 @@ using MvvmCross.Binding.Bindings.Target.Construction;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
+using MvvmCross.iOS.Views;
 using MvvmCross.iOS.Views.Presenters;
 using MvvmCross.Platform.Platform;
 using UIKit;
@@ -36,6 +37,7 @@ namespace SteemitApp.iOS
             registry.RegisterCustomBindingFactory<UIWebView>("Html", (arg) => new WebViewStringBinding(arg));
             registry.RegisterCustomBindingFactory<UIWebView>("Loaded", (arg) => new WebViewLoadedBinding(arg));
             registry.RegisterCustomBindingFactory<UIScrollView>("Size", (arg) => new ScrollViewSizeBinding(arg));
+            registry.RegisterCustomBindingFactory<TabView>("Tabs", (arg) => new TabViewTabsBinding(arg));
 
             base.FillTargetFactories(registry);
         }

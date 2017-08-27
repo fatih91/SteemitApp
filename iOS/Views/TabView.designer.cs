@@ -9,21 +9,13 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace SteemitApp.iOS.Views
+namespace SteemitApp.iOS
 {
-    [Register ("MainView")]
-    partial class MainView
+    [Register ("TabView")]
+    partial class TabView
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView TableDiscussions { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
-            if (TableDiscussions != null) {
-                TableDiscussions.Dispose ();
-                TableDiscussions = null;
-            }
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 
-namespace SteemitApp.Core
+namespace SteemitApp.Core.ViewModels
 {
     public class DetailViewModel : MvxViewModel
     {
