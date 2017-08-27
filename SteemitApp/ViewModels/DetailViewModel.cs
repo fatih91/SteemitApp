@@ -17,19 +17,22 @@ namespace SteemitApp.Core
 
         public override System.Threading.Tasks.Task Initialize()
         {
-            Regex expression = new Regex(@"(http)?s?:?(\/\/[^""']*\.(?:png|jpg|jpeg|gif|png|svg))");
-            var matches = expression.Matches(post.Body);
-
-            foreach (var match in matches)
+            if (post.Body.Contains("<p>")) 
             {
-                try
-                {
-                    string img = match.ToString();
-                    // post.Body = post.Body.Replace(img, $"<img src=\"{img}\" />");
-                }
-                catch (Exception ex)
-                {
+                Regex expression = new Regex(@"(http)?s?:?(\/\/[^""']*\.(?:png|jpg|jpeg|gif|png|svg))");
+                var matches = expression.Matches(post.Body);    
 
+                foreach (var match in matches)
+                {
+                    try
+                    {
+                        string img = match.ToString();
+                        post.Body = post.Body.Replace(img, $"<img src=\"{img}\" />");
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
                 }
             }
 
@@ -46,6 +49,19 @@ namespace SteemitApp.Core
             set { SetProperty(ref post, value); }
         }
 
+        public IMvxCommand RenderedCommand => new MvxCommand<float>(Rendered);
+
+        private void Rendered(float Height) 
+        {
+            WebViewContentHeight = Height;
+        }
+
+        private float webViewContentHeight;
+        public float WebViewContentHeight
+        {
+            get { return webViewContentHeight; }
+            set { SetProperty(ref webViewContentHeight, value); }
+        }
 
     }
 }

@@ -5,14 +5,13 @@ using UIKit;
 
 namespace SteemitApp.iOS
 {
-    public class WebViewStringBinding : MvxTargetBinding
+    public class ScrollViewSizeBinding : MvxTargetBinding
     {
-        private readonly UIWebView webView;
+        private readonly UIScrollView scrollView;
 
-        public WebViewStringBinding(UIWebView WebView): base(WebView)
+        public ScrollViewSizeBinding(UIScrollView ScrollView): base(ScrollView)
         {
-            webView = WebView;
-
+            scrollView = ScrollView;
         }
 
         public override MvxBindingMode DefaultMode
@@ -27,7 +26,7 @@ namespace SteemitApp.iOS
         {
             get
             {
-                return typeof(UIWebView);
+                return typeof(UIScrollView);
             }
         }
 
@@ -35,10 +34,8 @@ namespace SteemitApp.iOS
         {
             if (value != null) 
             {
-                string html = (string)value;
-                var MarkDownEngine = new MarkdownDeep.Markdown();
-                html = MarkDownEngine.Transform(html);
-                webView.LoadHtmlString(html, new Foundation.NSUrl(""));
+                float height = (float)value;
+                scrollView.ContentSize = new CoreGraphics.CGSize(100, height);
             }
         }
     }

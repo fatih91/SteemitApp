@@ -34,6 +34,8 @@ namespace SteemitApp.iOS
         {
             registry.RegisterCustomBindingFactory<PagingTableSource>("Paging", (arg) => new TableSourcePagingBinding(arg));
             registry.RegisterCustomBindingFactory<UIWebView>("Html", (arg) => new WebViewStringBinding(arg));
+            registry.RegisterCustomBindingFactory<UIWebView>("Loaded", (arg) => new WebViewLoadedBinding(arg));
+            registry.RegisterCustomBindingFactory<UIScrollView>("Size", (arg) => new ScrollViewSizeBinding(arg));
 
             base.FillTargetFactories(registry);
         }

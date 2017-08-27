@@ -169,6 +169,8 @@
       <DependentUpon>DetailView.cs</DependentUpon>
     </Compile>
     <Compile Include="Bindings\WebViewStringBinding.cs" />
+    <Compile Include="Bindings\WebViewLoadedBinding.cs" />
+    <Compile Include="Bindings\ScrollViewSizeBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SteemitApp\SteemitApp.Core.csproj">
