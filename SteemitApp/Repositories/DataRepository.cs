@@ -16,8 +16,6 @@ namespace SteemitApp.Core
             provider = Provider;
 
             Mapper.CreateMap<Post, PostPresentation>();
-
-                  // .ForMember(dest => dest.CreationDate, obj => obj.MapFrom(source => source.AufnahmeDatum));
         }
 
         public async Task<RestResult<List<PostPresentation>>> LoadDiscussions(DiscussionPayload Payload)
@@ -25,7 +23,6 @@ namespace SteemitApp.Core
             var response = await provider.LoadDiscussions(Payload);
 
             RestResult<List<PostPresentation>> result = new RestResult<List<PostPresentation>>();
-
             result.StatusCode = response.StatusCode;
 
             foreach (var discussion in response.Data)
@@ -36,13 +33,13 @@ namespace SteemitApp.Core
                 }
                 catch (Exception ex)
                 {
-
+                    // 
                 }
-
             }
 
-            result.Data = response.Data.Select(Mapper.Map<Post, PostPresentation>).ToList();
-                
+            result.Data = response.Data
+                                  .Select(Mapper.Map<Post, PostPresentation>)
+                                  .ToList();
             return result;
         }
     }

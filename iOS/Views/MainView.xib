@@ -35,15 +35,6 @@
                         <segment title="Promoted"/>
                     </segments>
                 </segmentedControl>
-                <tabBar contentMode="scaleToFill" id="42" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                    <rect key="frame" x="172" y="531" width="320" height="49"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <items>
-                        <tabBarItem systemItem="favorites" id="43"/>
-                        <tabBarItem systemItem="more" id="44"/>
-                    </items>
-                </tabBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="25.5" y="52.5"/>

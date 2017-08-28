@@ -17,8 +17,26 @@ namespace SteemitApp.Core.ViewModels
             tabs = new List<TabItemPresentation>();
             tabs.Add(new TabItemPresentation 
             {
-                Title = "Patient",
-                ViewModelType = typeof(DetailViewModel),
+                Title = "Explore",
+                ViewModelType = typeof(MainViewModel),
+                ImageName = "tabPatient"
+            });
+            tabs.Add(new TabItemPresentation 
+            {
+                Title = "My Posts",
+                ViewModelType = typeof(MyPostsViewModel),
+                ImageName = "tabPatient"
+            });
+            tabs.Add(new TabItemPresentation 
+            {
+                Title = "Wallet",
+                ViewModelType = typeof(WalletViewModel),
+                ImageName = "tabPatient"
+            });
+            tabs.Add(new TabItemPresentation 
+            {
+                Title = "Settings",
+                ViewModelType = typeof(SettingsViewModel),
                 ImageName = "tabPatient"
             });
         }

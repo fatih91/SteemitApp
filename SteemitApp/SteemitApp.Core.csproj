@@ -45,6 +45,10 @@
     <Compile Include="ViewModels\DetailViewModel.cs" />
     <Compile Include="ViewModels\TabViewModel.cs" />
     <Compile Include="Presentations\TabItemPresentation.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\WalletViewModel.cs" />
+    <Compile Include="ViewModels\MyPostsViewModel.cs" />
+    <Compile Include="ViewModels\SplashViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

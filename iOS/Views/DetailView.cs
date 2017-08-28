@@ -9,7 +9,7 @@ using UIKit;
 
 namespace SteemitApp.iOS
 {
-    [MvxTabPresentation]
+    [MvxChildPresentation]
     public partial class DetailView : MvxViewController
     {
         public DetailView() : base("DetailView", null)

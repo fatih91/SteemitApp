@@ -19,7 +19,6 @@ namespace SteemitApp.Core.ViewModels
         
         public override async Task Initialize()
         {
-            //TODO: Add starting logic here
             var result = await repository.LoadDiscussions(new DiscussionPayload("steem", "10"));
             if (result.StatusCode == System.Net.HttpStatusCode.OK) 
             {
@@ -61,8 +60,8 @@ namespace SteemitApp.Core.ViewModels
         private void SelectTableItem(PostPresentation Post) 
         {
             Mvx.RegisterSingleton<PostPresentation>(Post);
-            // navigation.Navigate<DetailViewModel>();
-            navigation.Navigate<TabViewModel>();
+            navigation.Navigate<DetailViewModel>();
+            // navigation.Navigate<TabViewModel>();
         }
 
         private string _text = "Hello MvvmCross";

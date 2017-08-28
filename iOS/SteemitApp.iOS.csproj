@@ -139,6 +139,10 @@
     <InterfaceDefinition Include="TableCells\PostCell.xib" />
     <InterfaceDefinition Include="Views\DetailView.xib" />
     <InterfaceDefinition Include="Views\TabView.xib" />
+    <InterfaceDefinition Include="Views\SplashView.xib" />
+    <InterfaceDefinition Include="Views\SettingsView.xib" />
+    <InterfaceDefinition Include="Views\WalletView.xib" />
+    <InterfaceDefinition Include="Views\MyPostsView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -177,6 +181,22 @@
       <DependentUpon>TabView.cs</DependentUpon>
     </Compile>
     <Compile Include="Bindings\TabViewTabsBinding.cs" />
+    <Compile Include="Views\SplashView.cs" />
+    <Compile Include="Views\SplashView.designer.cs">
+      <DependentUpon>SplashView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsView.cs" />
+    <Compile Include="Views\SettingsView.designer.cs">
+      <DependentUpon>SettingsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WalletView.cs" />
+    <Compile Include="Views\WalletView.designer.cs">
+      <DependentUpon>WalletView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyPostsView.cs" />
+    <Compile Include="Views\MyPostsView.designer.cs">
+      <DependentUpon>MyPostsView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SteemitApp\SteemitApp.Core.csproj">
@@ -189,6 +209,9 @@
       <Version>1.1.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\steemitlogo6%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

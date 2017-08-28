@@ -15,7 +15,7 @@ namespace SteemitApp.Core
             Mvx.RegisterSingleton<IProvider>(() => new RestProvider());
             Mvx.ConstructAndRegisterSingleton<IRepository, DataRepository>();
 
-            RegisterAppStart<ViewModels.MainViewModel>();
+            RegisterAppStart<ViewModels.SplashViewModel>();
         }
     }
 }
