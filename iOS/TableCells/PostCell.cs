@@ -24,6 +24,10 @@ namespace SteemitApp.iOS
             {
                 var set = this.CreateBindingSet<PostCell, PostPresentation>();
                 set.Bind(LabelTitle).To(vm => vm.Title);
+
+                MvxImageViewLoader imageLoader = new MvxImageViewLoader(() => PostImage);    
+                set.Bind(imageLoader).To(vm => vm.MainImage);
+
                 set.Apply();
             });
         }

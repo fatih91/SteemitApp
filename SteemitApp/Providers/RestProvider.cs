@@ -44,6 +44,14 @@ namespace SteemitApp.Core
             var rawJson = await response.Content.ReadAsStringAsync();
             var list = JsonConvert.DeserializeObject<List<Post>>(rawJson);
 
+            if (list != null) 
+            {
+                foreach (var post in list)
+                {
+                    post.JsonMetaData = JsonConvert.DeserializeObject<JsonMetaData>(post.JsonMetaDataString);
+                }
+            }
+
             return new RestResult<List<Post>> 
             { 
                 Data = list, 

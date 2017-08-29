@@ -31,5 +31,9 @@ namespace SteemitApp.iOS
             return cell;
         }
 
+        public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            return 300f;
+        }
     }
 }

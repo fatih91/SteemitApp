@@ -17,11 +17,20 @@ namespace SteemitApp.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LabelTitle { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView PostImage { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (LabelTitle != null) {
                 LabelTitle.Dispose ();
                 LabelTitle = null;
+            }
+
+            if (PostImage != null) {
+                PostImage.Dispose ();
+                PostImage = null;
             }
         }
     }

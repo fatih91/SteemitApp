@@ -50,6 +50,7 @@
     <Compile Include="ViewModels\MyPostsViewModel.cs" />
     <Compile Include="ViewModels\SplashViewModel.cs" />
     <Compile Include="Payloads\DiscussionCategory.cs" />
+    <Compile Include="Models\JsonMetaData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

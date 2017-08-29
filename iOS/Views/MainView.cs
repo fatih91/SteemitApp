@@ -16,6 +16,8 @@ namespace SteemitApp.iOS.Views
         {
             base.ViewDidLoad();
 
+            this.AutomaticallyAdjustsScrollViewInsets = false;
+
             var set = this.CreateBindingSet<MainView, Core.ViewModels.MainViewModel>();
 
             set.Bind(SegmentedControl).For("Segmented").To(vm => vm.SegmentChangedCommand);
@@ -27,7 +29,6 @@ namespace SteemitApp.iOS.Views
             set.Bind(source).For("Paging").To(vm => vm.LoadMoreCommand);
 
             TableDiscussions.Source = source;
-
 
 
             set.Apply();

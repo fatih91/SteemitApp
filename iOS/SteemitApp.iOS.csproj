@@ -112,6 +112,27 @@
     <Reference Include="MarkDownDeep.iOS">
       <HintPath>..\Components\MarkDownDeep-1.1.1\lib\ios-unified\MarkDownDeep.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.File">
+      <HintPath>..\packages\MvvmCross.Plugin.File.5.1.1\lib\Xamarin.iOS10\MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.File.5.1.1\lib\Xamarin.iOS10\MvvmCross.Plugins.File.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.ResourceLoader">
+      <HintPath>..\packages\MvvmCross.Plugin.ResourceLoader.5.1.1\lib\Xamarin.iOS10\MvvmCross.Plugins.ResourceLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.ResourceLoader.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.ResourceLoader.5.1.1\lib\Xamarin.iOS10\MvvmCross.Plugins.ResourceLoader.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.DownloadCache">
+      <HintPath>..\packages\MvvmCross.Plugin.DownloadCache.5.1.1\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.DownloadCache.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.DownloadCache.5.1.1\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -198,6 +219,9 @@
       <DependentUpon>MyPostsView.cs</DependentUpon>
     </Compile>
     <Compile Include="Bindings\SegmentedBinding.cs" />
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\ResourceLoaderPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SteemitApp\SteemitApp.Core.csproj">

@@ -33,6 +33,14 @@ namespace SteemitApp.Core.Models
         [JsonProperty("body")]
         public string Body { get; set; }
 
+        [JsonProperty("json_metadata")]
+        public string JsonMetaDataString { get; set; }
+
+        [JsonIgnore]
+        public JsonMetaData JsonMetaData { get; set; }
+
+
+
         // "json_metadata": "{"tags":["steemit","steem","condenser","mobile"],"users":["steemitdev","steemitblog"],"image":["https://cdn.pixabay.com/photo/2016/09/15/18/28/update-1672349_1280.png"],"app":"steemit/0.1","format":"markdown"}",
         // [JsonProperty("json_metadata")]
         // public MetaData MetaData { get; set; }

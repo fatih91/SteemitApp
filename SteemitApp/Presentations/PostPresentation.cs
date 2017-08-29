@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using SteemitApp.Core.Models;
 
@@ -91,5 +92,24 @@ namespace SteemitApp.Core
         public long BodyLength { get; set; }
 
         public List<string> RebloggedBy { get; set; }
+
+        public string MainImage 
+        { 
+            get 
+            { 
+                if (JsonMetaData != null && JsonMetaData.Image != null) 
+                {
+                    var firstImage = JsonMetaData.Image.FirstOrDefault();
+                    if (firstImage != null) 
+                    {
+                        return firstImage;
+                    }
+                }
+
+                return "";
+            }
+        }
+
+        public JsonMetaData JsonMetaData { get; set; }
     }
 }
