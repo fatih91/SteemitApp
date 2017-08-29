@@ -5,8 +5,11 @@ namespace SteemitApp.Core
 {
     public class TabItemPresentation
     {
-    	public TabItemPresentation()
+    	public TabItemPresentation(string Title, string ImageName, Type ViewModelType)
     	{
+            this.Title = Title;
+            this.ImageName = ImageName;
+            this.ViewModelType = ViewModelType;
     	}
 
     	public Type ViewModelType;
@@ -22,7 +25,7 @@ namespace SteemitApp.Core
     	public string ImageName
     	{
     		get { return imageName; }
-    		set { title = value; }
+    		set { imageName = value; }
         }
     }
 

@@ -18,6 +18,8 @@ namespace SteemitApp.iOS.Views
 
             var set = this.CreateBindingSet<MainView, Core.ViewModels.MainViewModel>();
 
+            set.Bind(SegmentedControl).For("Segmented").To(vm => vm.SegmentChangedCommand);
+
             var source = new PagingTableSource(TableDiscussions);
 
             set.Bind(source).To(vm => vm.Discussions);
@@ -25,6 +27,8 @@ namespace SteemitApp.iOS.Views
             set.Bind(source).For("Paging").To(vm => vm.LoadMoreCommand);
 
             TableDiscussions.Source = source;
+
+
 
             set.Apply();
 

@@ -22,7 +22,25 @@ namespace SteemitApp.Core
         {
             var jsonPayload = JsonConvert.SerializeObject(Payload);
 
-            var response = await client.GetAsync($"get_discussions_by_trending?query={jsonPayload}");
+            var restResource = "get_discussions_by_trending";
+
+            switch (Payload.Type)
+            {
+                case DiscussionCategory.Trending:
+                    restResource = "get_discussions_by_trending";
+                    break;
+                case DiscussionCategory.Promoted:
+                    restResource = "get_discussions_by_promoted";
+                    break;
+                case DiscussionCategory.New:
+                    restResource = "get_discussions_by_created";
+                    break;
+                case DiscussionCategory.Hot:
+                    restResource = "get_discussions_by_hot";
+                    break;
+            }
+
+            var response = await client.GetAsync($"{restResource}?query={jsonPayload}");
             var rawJson = await response.Content.ReadAsStringAsync();
             var list = JsonConvert.DeserializeObject<List<Post>>(rawJson);
 

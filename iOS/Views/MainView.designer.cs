@@ -16,10 +16,19 @@ namespace SteemitApp.iOS.Views
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISegmentedControl SegmentedControl { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView TableDiscussions { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (SegmentedControl != null) {
+                SegmentedControl.Dispose ();
+                SegmentedControl = null;
+            }
+
             if (TableDiscussions != null) {
                 TableDiscussions.Dispose ();
                 TableDiscussions = null;

@@ -197,6 +197,7 @@
     <Compile Include="Views\MyPostsView.designer.cs">
       <DependentUpon>MyPostsView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bindings\SegmentedBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SteemitApp\SteemitApp.Core.csproj">

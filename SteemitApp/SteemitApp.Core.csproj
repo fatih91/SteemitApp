@@ -49,6 +49,7 @@
     <Compile Include="ViewModels\WalletViewModel.cs" />
     <Compile Include="ViewModels\MyPostsViewModel.cs" />
     <Compile Include="ViewModels\SplashViewModel.cs" />
+    <Compile Include="Payloads\DiscussionCategory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -35,5 +35,8 @@ namespace SteemitApp.Core
 
         [JsonProperty("start_permlink")]
         public string StartPermlink { get; set; }
+
+        [JsonIgnore]
+        public DiscussionCategory Type { get; set; } = DiscussionCategory.Trending;
     }
 }

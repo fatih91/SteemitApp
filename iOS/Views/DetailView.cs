@@ -37,10 +37,9 @@ namespace SteemitApp.iOS
             // this.ScrollView.AddSubview(this.WebView);
             this.ScrollView.ContentSize = new CGSize(100f, 2000f);
 
-            this.TabBarItem.Title = "Test";
+            // this.TabBarItem.Title = "Test";
             this.ViewModel.Initialize();
         }
-
 
         public override void DidReceiveMemoryWarning()
         {

@@ -10,6 +10,7 @@ namespace SteemitApp.Core.ViewModels
     {
         private readonly IRepository repository;
         private readonly IMvxNavigationService navigation;
+        private DiscussionCategory category = DiscussionCategory.Trending;
 
         public MainViewModel(IRepository Repository, IMvxNavigationService Navigation)
         {
@@ -19,7 +20,15 @@ namespace SteemitApp.Core.ViewModels
         
         public override async Task Initialize()
         {
-            var result = await repository.LoadDiscussions(new DiscussionPayload("steem", "10"));
+            await loadDiscussions();
+        }
+
+        private async Task loadDiscussions() 
+        {
+            var payload = new DiscussionPayload("steem", "10");
+            payload.Type = category;
+
+            var result = await repository.LoadDiscussions(payload);
             if (result.StatusCode == System.Net.HttpStatusCode.OK) 
             {
                 foreach (var discussion in result.Data)
@@ -31,13 +40,6 @@ namespace SteemitApp.Core.ViewModels
 
         public MvxObservableCollection<PostPresentation> Discussions { get; set; } = new MvxObservableCollection<PostPresentation>();
 
-        public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
-        private void ResetText()
-        {
-            Text = "Hello MvvmCross";
-
-        }
-
         public IMvxCommand LoadMoreCommand => new MvxCommand(LoadMore);
         private async void LoadMore() 
         {
@@ -45,6 +47,8 @@ namespace SteemitApp.Core.ViewModels
             if (lastEntry != null) 
             {
                 var payload = new DiscussionPayload("steem", "10", lastEntry.Author, lastEntry.Permlink);
+                payload.Type = category;
+
                 var result = await repository.LoadDiscussions(payload);
                 if (result.StatusCode == System.Net.HttpStatusCode.OK) 
                 {
@@ -61,14 +65,14 @@ namespace SteemitApp.Core.ViewModels
         {
             Mvx.RegisterSingleton<PostPresentation>(Post);
             navigation.Navigate<DetailViewModel>();
-            // navigation.Navigate<TabViewModel>();
         }
 
-        private string _text = "Hello MvvmCross";
-        public string Text
+        public IMvxCommand SegmentChangedCommand => new MvxCommand<int>(SegmentChanged);
+        private async void SegmentChanged(int index) 
         {
-            get { return _text; }
-            set { SetProperty(ref _text, value); }
+            category = (DiscussionCategory)index;
+            Discussions.Clear();
+            await loadDiscussions();
         }
     }
 }

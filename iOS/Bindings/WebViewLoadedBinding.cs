@@ -15,24 +15,26 @@ namespace SteemitApp.iOS
         public WebViewLoadedBinding(UIWebView WebView): base(WebView)
         {
             webView = WebView;
+            webView.LoadFinished += loadFinished;
+        }
 
-            webView.LoadFinished += (sender, e) => 
+        private void loadFinished(object sender, EventArgs e) 
+        {
+            var offsetHeight = webView.EvaluateJavascript("document.body.offsetHeight");
+            float height = 0;
+            if (float.TryParse(offsetHeight, out height))
             {
-                var offsetHeight = webView.EvaluateJavascript("document.body.offsetHeight");
-                float height = 0;
-                if (float.TryParse(offsetHeight, out height))
-                {
-                    this.webView.Frame = new CoreGraphics.CGRect(0,
-                                                                 0,
-                                                                 this.webView.Frame.Width,
-                                                                 height);
 
-                    if (command != null) 
-                    { 
-                        command.Execute(height);
-                    }
+				this.webView.Frame = new CoreGraphics.CGRect(0,
+															 0,
+															 this.webView.Frame.Width,
+															 height);
+
+                if (command != null) 
+				{
+                    command.Execute(height);
                 }
-            };
+            }
         }
 
         public override MvxBindingMode DefaultMode
