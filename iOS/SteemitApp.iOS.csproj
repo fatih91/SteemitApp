@@ -237,6 +237,9 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\steemitlogo6%402x.png" />
+    <BundleResource Include="Resources\upvode.png" />
+    <BundleResource Include="Resources\caret.png" />
+    <BundleResource Include="Resources\comments.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

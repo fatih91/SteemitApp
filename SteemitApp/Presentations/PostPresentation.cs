@@ -111,5 +111,44 @@ namespace SteemitApp.Core
         }
 
         public JsonMetaData JsonMetaData { get; set; }
+
+        public string CreatedAgo 
+        { 
+            get 
+            {
+                var time = DateTime.Now - Created;
+
+                if (time.Days > 0)
+                {
+                    return time.Days + " days ago";
+                }
+                else if (time.Hours > 0)
+                {
+                    return time.Hours + " hours ago";
+                }
+                else if (time.Minutes > 0)
+                {
+                    return time.Minutes + " minutes ago";
+                }
+                else if (time.Seconds > 0) 
+                {
+                    return time.Seconds + " seconds ago";
+                }
+
+                return "";   
+            }
+        }
+
+        public int VotesCount 
+        { 
+            get 
+            {
+                if (ActivesVotes != null) 
+                {
+                    return ActivesVotes.Count;
+                }
+                return 0;
+            }
+        }
     }
 }

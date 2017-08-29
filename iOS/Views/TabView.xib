@@ -17,5 +17,8 @@
     </objects>
     <resources>
         <image name="steemitlogo6.png" width="90" height="90"/>
+        <image name="upvode.png" width="50" height="50"/>
+        <image name="caret.png" width="256" height="256"/>
+        <image name="comments.png" width="256" height="256"/>
     </resources>
 </document>
