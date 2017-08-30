@@ -18,6 +18,21 @@ namespace SteemitApp.Core
             client.BaseAddress = new Uri("https://api.steemjs.com");
         }
 
+        // https://api.steemjs.com/get_trending_tags?afterTag=steem&limit=10
+
+        public async Task<RestResult<List<Tag>>> LoadTags(TagPayload Payload) 
+        {
+            var response = await client.GetAsync($"get_trending_tags?afterTag={Payload.AfterTag}&limit={Payload.Limit}");
+            var rawJson = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<Tag>>(rawJson);
+
+            return new RestResult<List<Tag>>
+            {
+                Data = list,
+                StatusCode = response.StatusCode
+            };
+        }
+
         public async Task<RestResult<List<Post>>> LoadDiscussions(DiscussionPayload Payload)
         {
             var jsonPayload = JsonConvert.SerializeObject(Payload);

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TagView">
+            <connections>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+                <outlet property="TableTags" destination="5" id="name-outlet-5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <constraints>
+                <constraint id="6" firstItem="5" firstAttribute="trailing" secondItem="2" secondAttribute="trailing"/>
+                <constraint id="7" firstItem="5" firstAttribute="leading" secondItem="2" secondAttribute="leading"/>
+                <constraint id="8" firstItem="5" firstAttribute="bottom" secondItem="2" secondAttribute="bottom"/>
+                <constraint id="9" firstItem="5" firstAttribute="top" secondItem="2" secondAttribute="top"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="steemitlogo6.png" width="90" height="90"/>
+        <image name="upvode.png" width="50" height="50"/>
+        <image name="caret.png" width="256" height="256"/>
+        <image name="comments.png" width="256" height="256"/>
+    </resources>
+</document>

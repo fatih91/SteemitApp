@@ -43,5 +43,17 @@ namespace UnitTests
             Assert.IsTrue(result.StatusCode == System.Net.HttpStatusCode.OK);
             Assert.IsTrue(result.Data.Count > 0);
         }
+
+        [Test]
+        public async Task LoadTags_Succeed() 
+        {
+            var payload = new TagPayload();
+
+            var result = await provider.LoadTags(payload);
+
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.StatusCode == System.Net.HttpStatusCode.OK);
+            Assert.IsTrue(result.Data.Count > 0);
+        }
     }
 }

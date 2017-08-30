@@ -16,6 +16,21 @@ namespace SteemitApp.Core
             provider = Provider;
 
             Mapper.CreateMap<Post, PostPresentation>();
+            Mapper.CreateMap<Tag, TagPresentation>();
+        }
+
+        public async Task<RestResult<List<TagPresentation>>> LoadTags(TagPayload Payload) 
+        {
+            var response = await provider.LoadTags(Payload);
+
+            RestResult<List<TagPresentation>> result = new RestResult<List<TagPresentation>>();
+            result.StatusCode = response.StatusCode;
+
+            result.Data = response.Data
+                                  .Select(Mapper.Map<Tag, TagPresentation>)
+                                  .ToList();
+
+            return result;
         }
 
         public async Task<RestResult<List<PostPresentation>>> LoadDiscussions(DiscussionPayload Payload)
@@ -33,7 +48,7 @@ namespace SteemitApp.Core
                 }
                 catch (Exception ex)
                 {
-                    // 
+                    throw ex;
                 }
             }
 

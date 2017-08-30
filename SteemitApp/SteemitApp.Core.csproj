@@ -51,6 +51,9 @@
     <Compile Include="ViewModels\SplashViewModel.cs" />
     <Compile Include="Payloads\DiscussionCategory.cs" />
     <Compile Include="Models\JsonMetaData.cs" />
+    <Compile Include="ViewModels\TagViewModel.cs" />
+    <Compile Include="Presentations\TagPresentation.cs" />
+    <Compile Include="Payloads\TagPayload.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

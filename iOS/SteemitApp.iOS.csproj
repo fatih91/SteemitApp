@@ -164,6 +164,8 @@
     <InterfaceDefinition Include="Views\SettingsView.xib" />
     <InterfaceDefinition Include="Views\WalletView.xib" />
     <InterfaceDefinition Include="Views\MyPostsView.xib" />
+    <InterfaceDefinition Include="Views\TagView.xib" />
+    <InterfaceDefinition Include="TableCells\TagCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -222,6 +224,15 @@
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Bootstrap\ResourceLoaderPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
+    <Compile Include="Views\TagView.cs" />
+    <Compile Include="Views\TagView.designer.cs">
+      <DependentUpon>TagView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableCells\TagCell.cs" />
+    <Compile Include="TableCells\TagCell.designer.cs">
+      <DependentUpon>TagCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableSources\GenericTableSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SteemitApp\SteemitApp.Core.csproj">

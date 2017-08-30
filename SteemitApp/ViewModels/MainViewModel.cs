@@ -16,6 +16,8 @@ namespace SteemitApp.Core.ViewModels
         {
             repository = Repository;
             navigation = Navigation;
+            CurrentTag = new TagPresentation();
+            CurrentTag.Name = "steem";
         }
         
         public override async Task Initialize()
@@ -25,7 +27,9 @@ namespace SteemitApp.Core.ViewModels
 
         private async Task loadDiscussions() 
         {
-            var payload = new DiscussionPayload("steem", "10");
+            Discussions.Clear();
+
+            var payload = new DiscussionPayload(CurrentTag.Name, "10");
             payload.Type = category;
 
             var result = await repository.LoadDiscussions(payload);
@@ -46,7 +50,7 @@ namespace SteemitApp.Core.ViewModels
             var lastEntry = Discussions.LastOrDefault();
             if (lastEntry != null) 
             {
-                var payload = new DiscussionPayload("steem", "10", lastEntry.Author, lastEntry.Permlink);
+                var payload = new DiscussionPayload(CurrentTag.Name, "10", lastEntry.Author, lastEntry.Permlink);
                 payload.Type = category;
 
                 var result = await repository.LoadDiscussions(payload);
@@ -60,7 +64,15 @@ namespace SteemitApp.Core.ViewModels
             }
         }
 
+        private TagPresentation currentTag;
+        public TagPresentation CurrentTag
+        {
+            get { return currentTag; }
+            set { SetProperty(ref currentTag, value); }
+        }
+
         public IMvxCommand SelectTableItemCommand => new MvxCommand<PostPresentation>(SelectTableItem);
+
         private void SelectTableItem(PostPresentation Post) 
         {
             Mvx.RegisterSingleton<PostPresentation>(Post);
@@ -68,10 +80,19 @@ namespace SteemitApp.Core.ViewModels
         }
 
         public IMvxCommand SegmentChangedCommand => new MvxCommand<int>(SegmentChanged);
+
         private async void SegmentChanged(int index) 
         {
             category = (DiscussionCategory)index;
             Discussions.Clear();
+            await loadDiscussions();
+        }
+
+        public IMvxCommand OpenTagPopoverCommand => new MvxCommand(OpenTagPopover);
+
+        private async void OpenTagPopover() 
+        {
+            CurrentTag = await navigation.Navigate<TagViewModel, TagPayload, TagPresentation>(new TagPayload());
             await loadDiscussions();
         }
     }

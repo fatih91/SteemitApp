@@ -9,5 +9,6 @@ namespace SteemitApp.Core
     public interface IRepository
     {
         Task<RestResult<List<PostPresentation>>> LoadDiscussions(DiscussionPayload Payload);
+        Task<RestResult<List<TagPresentation>>> LoadTags(TagPayload Payload);
     }
 }
