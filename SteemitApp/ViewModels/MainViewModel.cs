@@ -18,6 +18,9 @@ namespace SteemitApp.Core.ViewModels
             navigation = Navigation;
             CurrentTag = new TagPresentation();
             CurrentTag.Name = "steem";
+            CurrentTagName = CurrentTag.Name;
+
+            TagButtonVisible = true;
         }
         
         public override async Task Initialize()
@@ -68,7 +71,11 @@ namespace SteemitApp.Core.ViewModels
         public TagPresentation CurrentTag
         {
             get { return currentTag; }
-            set { SetProperty(ref currentTag, value); }
+            set 
+            { 
+                SetProperty(ref currentTag, value);
+                CurrentTagName = currentTag.Name;
+            }
         }
 
         public IMvxCommand SelectTableItemCommand => new MvxCommand<PostPresentation>(SelectTableItem);
@@ -92,8 +99,24 @@ namespace SteemitApp.Core.ViewModels
 
         private async void OpenTagPopover() 
         {
+            TagButtonVisible = false;
             CurrentTag = await navigation.Navigate<TagViewModel, TagPayload, TagPresentation>(new TagPayload());
+            TagButtonVisible = true;
             await loadDiscussions();
+        }
+
+        private string currentTagName;
+        public string CurrentTagName
+        {
+            get { return "#" + currentTagName; }
+            set { SetProperty(ref currentTagName, value); }
+        }
+
+        private bool tagButtonVisible;
+        public bool TagButtonVisible
+        {
+            get { return tagButtonVisible; }
+            set { SetProperty(ref tagButtonVisible, value); }
         }
     }
 }

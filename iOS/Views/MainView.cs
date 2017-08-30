@@ -36,16 +36,22 @@ namespace SteemitApp.iOS.Views
             TableDiscussions.Source = source;
 
             var tagButton = new UIButton(UIButtonType.System);
+            // tagButton.TitleLabel.TextAlignment = UITextAlignment.Left;
+            tagButton.HorizontalAlignment = UIControlContentHorizontalAlignment.Left;
+            tagButton.ContentEdgeInsets = new UIEdgeInsets(10, 10, 10, 10);
+
             // tagButton.SetTitle("#steem", UIControlState.Normal);
-            tagButton.Frame = new CGRect(-10, -30, 100, 100);
+            tagButton.Frame = new CGRect(0, -30, 200, 100);
 
             set.Bind(tagButton).To(vm => vm.OpenTagPopoverCommand);
-            set.Bind(tagButton.TitleLabel).To(vm => vm.CurrentTag.Name);
+            set.Bind(tagButton).For("ButtonTitle").To(vm => vm.CurrentTagName);
+
+            set.Bind(tagButton).For(s => s.Hidden).To(vm => vm.TagButtonVisible)
+                               .WithConversion("InverseBool");
 
             set.Apply();
 
             this.NavigationController.NavigationBar.Add(tagButton);
-
 
             TableDiscussions.ReloadData();
 

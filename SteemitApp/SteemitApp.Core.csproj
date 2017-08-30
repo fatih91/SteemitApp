@@ -54,6 +54,7 @@
     <Compile Include="ViewModels\TagViewModel.cs" />
     <Compile Include="Presentations\TagPresentation.cs" />
     <Compile Include="Payloads\TagPayload.cs" />
+    <Compile Include="Converters\InverseBoolValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -104,6 +105,9 @@
     <Reference Include="System.Runtime.Extensions" />
     <Reference Include="System.Text.RegularExpressions" />
     <Reference Include="System.Threading" />
+    <Reference Include="MvvmCross.Plugins.Visibility">
+      <HintPath>..\packages\MvvmCross.Plugin.Visibility.5.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Providers\" />
@@ -111,6 +115,7 @@
     <Folder Include="Repositories\" />
     <Folder Include="Presentations\" />
     <Folder Include="Payloads\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

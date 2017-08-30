@@ -29,8 +29,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="44" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                        <rect key="frame" x="8" y="263" width="30" height="30"/>
-                        <state key="normal" backgroundImage="upvode.png">
+                        <rect key="frame" x="8" y="263" width="20" height="20"/>
+                        <state key="normal" backgroundImage="vote.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -89,5 +89,6 @@
         <image name="upvode.png" width="50" height="50"/>
         <image name="caret.png" width="256" height="256"/>
         <image name="comments.png" width="256" height="256"/>
+        <image name="vote.png" width="200" height="200"/>
     </resources>
 </document>

@@ -133,6 +133,12 @@
     <Reference Include="MvvmCross.Plugins.DownloadCache.iOS">
       <HintPath>..\packages\MvvmCross.Plugin.DownloadCache.5.1.1\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility">
+      <HintPath>..\packages\MvvmCross.Plugin.Visibility.5.1.1\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Visibility.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.Visibility.5.1.1\lib\Xamarin.iOS10\MvvmCross.Plugins.Visibility.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -233,6 +239,8 @@
       <DependentUpon>TagCell.cs</DependentUpon>
     </Compile>
     <Compile Include="TableSources\GenericTableSource.cs" />
+    <Compile Include="Bindings\ButtonTextBinding.cs" />
+    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SteemitApp\SteemitApp.Core.csproj">
@@ -251,6 +259,7 @@
     <BundleResource Include="Resources\upvode.png" />
     <BundleResource Include="Resources\caret.png" />
     <BundleResource Include="Resources\comments.png" />
+    <BundleResource Include="Resources\vote.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -39,6 +39,7 @@ namespace SteemitApp.iOS
             registry.RegisterCustomBindingFactory<UIScrollView>("Size", (arg) => new ScrollViewSizeBinding(arg));
             registry.RegisterCustomBindingFactory<TabView>("Tabs", (arg) => new TabViewTabsBinding(arg));
             registry.RegisterCustomBindingFactory<UISegmentedControl>("Segmented", (arg) => new SegmentedBinding(arg));
+            registry.RegisterCustomBindingFactory<UIButton>("ButtonTitle", (arg) =>  new ButtonTextBinding(arg));
 
             base.FillTargetFactories(registry);
         }
