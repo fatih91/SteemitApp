@@ -22,7 +22,13 @@ namespace SteemitApp.Core.ViewModels
 
             TagButtonVisible = true;
         }
-        
+
+        public override void ViewAppeared()
+        {
+            base.ViewAppeared();
+            TagButtonVisible = true;
+        }
+
         public override async Task Initialize()
         {
             await loadDiscussions();
@@ -82,8 +88,10 @@ namespace SteemitApp.Core.ViewModels
 
         private void SelectTableItem(PostPresentation Post) 
         {
+            TagButtonVisible = false;
             Mvx.RegisterSingleton<PostPresentation>(Post);
             navigation.Navigate<DetailViewModel>();
+
         }
 
         public IMvxCommand SegmentChangedCommand => new MvxCommand<int>(SegmentChanged);
