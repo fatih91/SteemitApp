@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="44" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                        <rect key="frame" x="8" y="263" width="20" height="20"/>
+                        <rect key="frame" x="13" y="269" width="20" height="20"/>
                         <state key="normal" backgroundImage="vote.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -41,23 +41,29 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="62" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                        <rect key="frame" x="187" y="270" width="42" height="21"/>
+                        <rect key="frame" x="193" y="270" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="65" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                        <rect key="frame" x="127" y="270" width="42" height="21"/>
+                        <rect key="frame" x="139" y="270" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="70" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="caret.png">
-                        <rect key="frame" x="100" y="270" width="20" height="20"/>
+                        <rect key="frame" x="118" y="270" width="20" height="20"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="71" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="comments.png">
-                        <rect key="frame" x="164" y="270" width="20" height="20"/>
+                        <rect key="frame" x="172" y="270" width="20" height="20"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="74" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                        <rect key="frame" x="36" y="270" width="76" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint id="20" firstItem="11" firstAttribute="trailing" secondItem="YTl-1W-gDM" secondAttribute="trailing"/>
@@ -80,6 +86,7 @@
                 <outlet property="LabelAuthor" destination="47" id="name-outlet-47"/>
                 <outlet property="LabelVotes" destination="62" id="name-outlet-62"/>
                 <outlet property="LabelComments" destination="65" id="name-outlet-65"/>
+                <outlet property="LabelPendingPayout" destination="74" id="name-outlet-74"/>
             </connections>
             <point key="canvasLocation" x="11" y="-1"/>
         </tableViewCell>

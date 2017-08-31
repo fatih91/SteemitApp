@@ -28,6 +28,7 @@ namespace SteemitApp.iOS
                 set.Bind(LabelAuthor).To(vm => vm.Author);
                 set.Bind(LabelVotes).To(vm => vm.VotesCount);
                 set.Bind(LabelComments).To(vm => vm.Children);
+                set.Bind(LabelPendingPayout).To(vm => vm.PendingPayoutValueDollar);
 
                 MvxImageViewLoader imageLoader = new MvxImageViewLoader(() => PostImage);    
                 set.Bind(imageLoader).To(vm => vm.MainImage);

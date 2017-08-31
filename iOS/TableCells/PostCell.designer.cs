@@ -27,6 +27,10 @@ namespace SteemitApp.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LabelPendingPayout { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LabelTitle { get; set; }
 
         [Outlet]
@@ -52,6 +56,11 @@ namespace SteemitApp.iOS
             if (LabelCreatedAgo != null) {
                 LabelCreatedAgo.Dispose ();
                 LabelCreatedAgo = null;
+            }
+
+            if (LabelPendingPayout != null) {
+                LabelPendingPayout.Dispose ();
+                LabelPendingPayout = null;
             }
 
             if (LabelTitle != null) {

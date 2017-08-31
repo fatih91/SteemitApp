@@ -81,6 +81,17 @@ namespace SteemitApp.Core
 
         public string TotalPendingPayoutValue { get; set; }
 
+        public string PendingPayoutValueDollar 
+        { 
+            get 
+            {
+                var numberString = PendingPayoutValue.Replace(" SBD", "");
+                float dollar = float.Parse(numberString);
+                var roundedValue = Math.Round(dollar, 2);
+                return roundedValue + " $";
+            }
+        }
+
         public List<Vote> ActivesVotes { get; set; }
 
         public List<string> Replies { get; set; }
