@@ -26,8 +26,10 @@ namespace SteemitApp.iOS
             var setup = new Setup(this, Window);
             setup.Initialize();
 
+            var path = System.IO.Path.GetTempPath();
+
             Mvx.RegisterSingleton<MvvmCross.Plugins.ResourceLoader.MvxResourceLoader>(new MvvmCross.Plugins.ResourceLoader.iOS.MvxIosResourceLoader());
-            Mvx.RegisterSingleton<MvvmCross.Plugins.File.IMvxFileStore>(new MvvmCross.Plugins.File.iOS.MvxIosFileStore(false, ""));
+            Mvx.RegisterSingleton<MvvmCross.Plugins.File.IMvxFileStore>(new MvvmCross.Plugins.File.iOS.MvxIosFileStore(true, path));
 
             var startup = Mvx.Resolve<IMvxAppStart>();
             startup.Start();
