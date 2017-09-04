@@ -16,6 +16,7 @@ namespace SteemitApp.UITests
 
         public Tests(Platform platform)
         {
+            //Test
             this.platform = platform;
         }
 
